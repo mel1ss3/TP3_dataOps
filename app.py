@@ -70,4 +70,3 @@ fig = px.line(df, x=col_date, y=col_donnees, title="Blablabla")
 st.plotly_chart(fig)
 
 # TODO
-

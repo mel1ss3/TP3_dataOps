@@ -45,7 +45,22 @@ def export_data(df: pd.DataFrame):
 def main_process():
     df: pd.DataFrame = load_data()
     df = format_data(df)
+    df = load_data()
+    df = format_data(df)
+    
+    # Calculer la consommation hebdomadaire
+    total = calculate_total(df)
     export_data(df)
+
+
+
+#TODO
+    
+    def calculate_total(df: pd.DataFrame):
+    # Agréger les données par semaine
+        return (df.resample('W-Mon', on=col_date)[col_donnees].sum())
+    #total = df.resample('W-Mon', on=col_date)[col_donnees].sum()
+   # return total
 
 
 if __name__ == "__main__":
