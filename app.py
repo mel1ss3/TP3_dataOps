@@ -40,5 +40,5 @@ last_week_data = df[df[col_date] >= last_week_start]
 # Calculate the total consumption for the last week
 total_consumption_last_week = last_week_data[col_donnees].sum()
  
-st.write(f"Total consumption for last week: {total_consumption_last_week}")
+st.write(f"Total consumption for last week : {total_consumption_last_week}")
  
