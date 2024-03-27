@@ -66,5 +66,8 @@ numerical_column = col_donnees
 
 # ! Plotly
 # Create interactive line chart using Plotly
-fig = px.line(df, x=col_date, y=col_donnees, title="Consommation en fonction du temps")
+fig = px.line(df, x=col_date, y=col_donnees, title="Blablabla")
 st.plotly_chart(fig)
+
+# TODO
+
