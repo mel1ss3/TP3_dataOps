@@ -56,11 +56,11 @@ def main_process():
 
 #TODO
     
-    def calculate_total(df: pd.DataFrame):
-    # Agréger les données par semaine
-        return (df.resample('W-Mon', on=col_date)[col_donnees].sum())
-    #total = df.resample('W-Mon', on=col_date)[col_donnees].sum()
-   # return total
+def calculate_total(df: pd.DataFrame):
+# Agréger les données par semaine
+    return (df.resample('W-Mon', on=col_date)[col_donnees].sum())
+#total = df.resample('W-Mon', on=col_date)[col_donnees].sum()
+# return total
 
 
 if __name__ == "__main__":
