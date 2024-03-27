@@ -58,6 +58,7 @@ def main_process():
     
     def calculate_total(df: pd.DataFrame):
     # Agréger les données par semaine
+        #kofekzp$
         return (df.resample('W-Mon', on=col_date)[col_donnees].sum())
     #total = df.resample('W-Mon', on=col_date)[col_donnees].sum()
    # return total
