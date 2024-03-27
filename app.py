@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 from src.fetch_data import load_data_from_lag_to_today
@@ -8,9 +7,7 @@ import os
 import glob
 
 def remove_data(df: pd.DataFrame, last_n_samples: int = 4*3):   
-     # df: pd.DataFrame = pd.read_csv(fic_export_data)    
-     return df.iloc[:-last_n_samples]    
-     # df.to_csv(fic_export_data, index=False)
+    return df.iloc[:-last_n_samples]
 
 logging.basicConfig(level=logging.INFO)
  
@@ -35,8 +32,12 @@ def load_data(lag_days: int):
     return data
  
 df = load_data(LAG_N_DAYS)
-df = remove_data(df, last_n_samples=4*24)
+removed_df = remove_data(df, last_n_samples=4*24)
 
+# Calculating the number of lost measurements
+lost_measurements = len(df) - len(removed_df)
+
+st.write(f"Number of lost measurements due to 'remove_data': {lost_measurements}")
 
 st.subheader("Total Consumption for Last Week")
  
@@ -48,4 +49,3 @@ last_week_data = df[df[col_date] >= last_week_start]
 total_consumption_last_week = last_week_data[col_donnees].sum()
  
 st.write(f"Total consumption for last week : {total_consumption_last_week}")
- 
