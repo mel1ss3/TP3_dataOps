@@ -50,12 +50,11 @@ def main_process():
     
    # Calculer la consommation hebdomadaire
     total = calculate_total(df)
+    print(total)
     export_data(df)
-    
-    # Afficher le total de la consommation hebdomadaire
-    calculate_and_display_total(df)
 
-'''
+
+
 #TODO
     
 def calculate_total(df: pd.DataFrame):
@@ -64,18 +63,6 @@ def calculate_total(df: pd.DataFrame):
 #total = df.resample('W-Mon', on=col_date)[col_donnees].sum()
 # return total
 
-'''
-    
-
-def calculate_total(df: pd.DataFrame):
-    # Agréger les données par semaine et calculer le total de la consommation
-    total_consumption = df.resample('W-Mon').sum()
-    return total_consumption
-
-def calculate_and_display_total(df: pd.DataFrame):
-    total = calculate_total(df)
-    print("Consommation totale de la semaine :")
-    print(total)
 
 
 if __name__ == "__main__":
